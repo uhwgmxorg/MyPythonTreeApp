@@ -1,0 +1,2 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TreeView><Node Text="Node A"><Node Text="A - 1" /><Node Text="A - 2" /></Node><Node Text="Node B"><Node Text="B - 1" /><Node Text="New Node"><Node Text="New Node" /><Node Text="New Node" /></Node></Node></TreeView>

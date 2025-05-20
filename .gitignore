@@ -1,0 +1,55 @@
+# Bytecode-Dateien
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtuelle Umgebungen
+venv/
+env/
+.virtualenv/
+*.venv
+
+# Distribution/Build-Ordner
+build/
+dist/
+*.egg-info/
+pip-wheel-metadata/
+
+# Python-Pakete und Abhängigkeiten
+*.egg
+*.whl
+*.lock
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+
+# Log- und Debug-Dateien
+logs/
+*.log
+*.out
+*.err
+
+# IDE-spezifische Dateien
+.vscode/
+*.sublime-workspace
+*.idea/
+*.iml
+
+# Betriebssystem-spezifische Dateien
+.DS_Store
+Thumbs.db
+
+# Pytest-, Coverage- und Test-Dateien
+htmlcov/
+.coverage
+*.cover
+.nox/
+.tox/
+.pytest_cache/
+
+# MyPy Typprüfung
+.mypy_cache/
+dmypy.json
+
+# For VS Studio
+.vs/
