@@ -14,7 +14,7 @@ A small Python GUI application built with **Tkinter**, allowing users to manage 
 - Toggleable message boxes and configurable web service URL.
 - Lightweight and fully local.
 
-![img](https://github.com/uhwgmxorg/MyPythonTreeApp/blob/master/Doc/199_1.png)
+![img](https://github.com/uhwgmxorg/MyPythonTreeApp/blob/master/Doc/100_1.png)
 
 ## Requirements
 
