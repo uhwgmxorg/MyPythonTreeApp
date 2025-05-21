@@ -21,6 +21,10 @@ A small Python GUI application built with **Tkinter**, allowing users to manage 
 - Python **3.10** or newer  
 - **Tkinter** (usually included with Python’s standard library)
 
+## For using with Web-Service if docker is installed
+
+`docker run --name my-xml-service-container -p 3000:3000 -p 5432:5432 -e POSTGRES_USER=xml_user -e POSTGRES_PASSWORD=password -e POSTGRES_DB=mydb -d uhwgmxorg/my-xml-service-postgresql-docker-image:1.1.0`
+
 ## Run the application
 
 python3 MyPythonTreeApp.py
