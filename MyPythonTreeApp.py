@@ -16,7 +16,7 @@ class MyPythonTreeApp(tk.Tk):
         # -------------------------------------------------
         # Window setup
         # -------------------------------------------------
-        self.title("MyPythonTreeApp - Debug Version 1.4.5")
+        self.title("MyPythonTreeApp - Debug Version 1.4.6")
         geom = f"{self.config_data.window_width}x{self.config_data.window_height}+{self.config_data.window_x}+{self.config_data.window_y}"
         self.geometry(geom)
 
