@@ -45,10 +45,11 @@ class FilesManagementStore:
         Saves the Treeview to the specified file. Shows an error if the path is empty.
         """
         if not filename:
-            messagebox.showerror(
-                "Save Error",
-                "Please provide a file name to save the tree view data."
-            )
+            msg = "Please provide a file name to save the tree view data."
+            if self.show_message_boxes:
+                messagebox.showerror("Save Error", msg)
+            else:
+                print(f"Save Error: {msg}")
             return
 
         self._save_to_file(filename)
@@ -67,7 +68,10 @@ class FilesManagementStore:
                 filetypes=[("XML files", "*.xml"), ("All files", "*.*")]
             )
         except Exception as e:
-            messagebox.showerror("Dialog Error", f"Could not open save dialog:\n{e}")
+            if self.show_message_boxes:
+                messagebox.showerror("Dialog Error", f"Could not open save dialog:\n{e}")
+            else:
+                print(f"Dialog Error: Could not open save dialog:\n{e}")
             return None
 
         if not filename:
