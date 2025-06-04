@@ -44,7 +44,10 @@ class WebServiceManagementStore:
             with urllib.request.urlopen(f"{self.webservice_url}/get_xml_by_id/{xml_id}") as resp:
                 xml_data = resp.read().decode('utf-8')
         except Exception as e:
-            messagebox.showerror("Load Error", f"Could not load XML data:\n{e}")
+            if self.show_message_boxes:
+                messagebox.showerror("Load Error", f"Could not load XML data:\n{e}")
+            else:
+                print(f"Load Error: Could not load XML data:\n{e}")
             return None
 
         # clear existing nodes
@@ -58,7 +61,10 @@ class WebServiceManagementStore:
             if self.show_message_boxes:
                 messagebox.showinfo("Load Successful", f"Loaded XML ID {xml_id}")
         except ET.ParseError as e:
-            messagebox.showerror("Parse Error", f"Failed to parse XML:\n{e}")
+            if self.show_message_boxes:
+                messagebox.showerror("Parse Error", f"Failed to parse XML:\n{e}")
+            else:
+                print(f"Parse Error: Failed to parse XML:\n{e}")
             return None
 
         return f"Id: {xml_id} Name: {dlg.selected_name}"
@@ -75,7 +81,11 @@ class WebServiceManagementStore:
         ds = getattr(parent.config_data, "data_source", "") or ""
         match = re.search(r"Id:\s*(\d+)", ds)
         if not match:
-            messagebox.showerror("Save Error", "Keine gültige XML-ID gefunden.")
+            msg = "No valid XML ID found."
+            if self.show_message_boxes:
+                messagebox.showerror("Save Error", msg)
+            else:
+                print(f"Save Error: {msg}")
             return
         xml_id = int(match.group(1))
 
@@ -94,7 +104,10 @@ class WebServiceManagementStore:
             if self.show_message_boxes:
                 messagebox.showinfo("Update Successful", f"Updated XML ID {xml_id}")
         except Exception as e:
-            messagebox.showerror("Save Error", f"Could not update XML:\n{e}")
+            if self.show_message_boxes:
+                messagebox.showerror("Save Error", f"Could not update XML:\n{e}")
+            else:
+                print(f"Save Error: Could not update XML:\n{e}")
 
     # -------------------------------------------------
     # Public interface: Save As (create new XML)
