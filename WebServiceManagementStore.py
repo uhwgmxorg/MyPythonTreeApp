@@ -81,7 +81,7 @@ class WebServiceManagementStore:
         ds = getattr(parent.config_data, "data_source", "") or ""
         match = re.search(r"Id:\s*(\d+)", ds)
         if not match:
-            msg = "Keine gültige XML-ID gefunden."
+            msg = "No valid XML ID found."
             if self.show_message_boxes:
                 messagebox.showerror("Save Error", msg)
             else:
