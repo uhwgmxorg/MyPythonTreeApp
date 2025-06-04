@@ -149,17 +149,23 @@ class MyPythonTreeApp(tk.Tk):
         # Context menu setup for TreeView
         # -------------------------------------------------
         self.tree_menu = tk.Menu(self, tearoff=False)
-        for label, command in [
+
+        menu_items = [
             ("Add Node",         self.add_node),
             ("Delete Node",      self.delete_node),
             ("Delete All Nodes", self.delete_all_nodes),
             ("Load Data",        self.load_tree),
             ("Save Data",        self.save_tree),
             ("Save As Data",     self.save_as_tree),
-        ]:
+        ]
+
+        for label, command in menu_items:
             if label == "Delete All Nodes":
-                self.tree_menu.add_separator()
-            self.tree_menu.add_command(label=label, command=command)
+                self.tree_menu.add_separator()  # separator before
+                self.tree_menu.add_command(label=label, command=command)
+                self.tree_menu.add_separator()  # separator after
+            else:
+                self.tree_menu.add_command(label=label, command=command)
 
     # -------------------------------------------------
     # Context menu action handlers

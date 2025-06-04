@@ -4,7 +4,7 @@
     "webservice_url": "http://localhost:3000/api",
     "datasource_option": "WebService",
     "window_x": 10,
-    "window_y": 10,
+    "window_y": 74,
     "window_width": 900,
     "window_height": 600
 }

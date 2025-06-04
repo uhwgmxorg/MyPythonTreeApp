@@ -53,3 +53,5 @@ dmypy.json
 
 # For VS Studio
 .vs/
+
+config.json
